@@ -8,6 +8,7 @@ import { SignIn } from "./pages/SignIn";
 import { ROUTER } from "../router";
 import "./App.css";
 import { Profile } from "./pages/Profile";
+import { AddPost } from "./pages/AddPost";
 
 function App(): JSX.Element {
   const user = useAppSelector((state) => state.auth.userData);
@@ -21,9 +22,31 @@ function App(): JSX.Element {
           element: (
             <PrivateRouter
               isAllowed={user.status === "logged"}
-              redirect="/signin"
+              redirect={ROUTER.signIn}
             >
               <MainPage />
+            </PrivateRouter>
+          ),
+        },
+        {
+          path: ROUTER.profile,
+          element: (
+            <PrivateRouter
+              isAllowed={user.status === "logged"}
+              redirect={ROUTER.signIn}
+            >
+              <Profile />
+            </PrivateRouter>
+          ),
+        },
+        {
+          path: ROUTER.addPost,
+          element: (
+            <PrivateRouter
+              isAllowed={user.status === "logged"}
+              redirect={ROUTER.signIn}
+            >
+              <AddPost />
             </PrivateRouter>
           ),
         },
@@ -42,10 +65,6 @@ function App(): JSX.Element {
               <SignIn />
             </PrivateRouter>
           ),
-        },
-        {
-          path: `${ROUTER.profile}/:login`,
-          element: <Profile />,
         },
       ],
     },

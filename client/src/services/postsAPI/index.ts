@@ -1,0 +1,1 @@
+export { postAPI } from "./postsAPI";

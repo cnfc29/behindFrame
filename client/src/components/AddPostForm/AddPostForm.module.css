@@ -1,0 +1,39 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px 10px;
+}
+
+.inputList {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  border: 1px solid var(--BorderColor);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+img.logo {
+  width: 40%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.error {
+  font-size: 14px;
+  color: var(--ErrorColor);
+}
+
+@media screen and (max-width: 520px) {
+  .inputList {
+    width: 95%;
+  }
+}

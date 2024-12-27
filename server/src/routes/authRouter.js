@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const generateTokens = require('../utils/generateTokens');
 const cookieConfig = require('../configs/cookieConfig');
-const { User } = require('../../db/models');
+const { User, Post } = require('../../db/models');
 
 const authRouter = express.Router();
 
@@ -22,6 +22,7 @@ authRouter.post('/signup', async (req, res) => {
 
   const user = newUser.get();
   delete user.password;
+
   const { accessToken, refreshToken } = generateTokens({ user });
   res
     .cookie('refreshToken', refreshToken, cookieConfig)

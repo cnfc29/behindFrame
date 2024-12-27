@@ -1,6 +1,6 @@
 
 export function MainPage() {
   return (
-    <div>MainPage</div>
+    <div>Лента пока пуста</div>
   )
 }
