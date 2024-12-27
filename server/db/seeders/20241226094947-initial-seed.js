@@ -1,13 +1,18 @@
+const bcrypt = require("bcrypt");
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
+    const hashedPassword = await bcrypt.hash("12345", 10);
     await queryInterface.bulkInsert(
       "Users",
       [
         {
           name: "Станислав",
           login: "cnfc29",
-          password: "29",
+          image:
+            "https://avatars.mds.yandex.net/i?id=365f187d952acea407546993e2607064_l-4090774-images-thumbs&n=13",
+          password: hashedPassword,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

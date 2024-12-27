@@ -3,4 +3,17 @@
   padding: 0px;
   box-sizing: border-box;
   border: none;
+  font-family: "Pacifico", cursive;
+  font-size: 16px;
+}
+
+:root {
+  --BorderColor: #c4c4c4;
+  --ErrorColor: #ff6f61;
+  --NavBarColor: linear-gradient(90deg, #f3c5ff, #ffd1ba);
+}
+
+html,
+body {
+  min-height: 100vh;
 }

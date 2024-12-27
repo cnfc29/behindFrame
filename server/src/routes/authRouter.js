@@ -7,14 +7,16 @@ const { User } = require('../../db/models');
 const authRouter = express.Router();
 
 authRouter.post('/signup', async (req, res) => {
-  const { name, login, password } = req.body;
-  if (!name || !login || !password) return res.sendStatus(400);
+  const {
+    name, login, password, image,
+  } = req.body;
+  if (!name || !login || !password || !image) return res.sendStatus(400);
 
   const hashpassword = await bcrypt.hash(password, 10);
 
   const [newUser, created] = await User.findOrCreate({
     where: { login },
-    defaults: { name, password: hashpassword },
+    defaults: { name, password: hashpassword, image },
   });
   if (!created) return res.sendStatus(400);
 
@@ -28,6 +30,7 @@ authRouter.post('/signup', async (req, res) => {
 
 authRouter.post('/login', async (req, res) => {
   const { login, password } = req.body;
+
   if (!login || !password) return res.sendStatus(400);
 
   const findUser = await User.findOne({ where: { login } });

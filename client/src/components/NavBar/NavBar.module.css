@@ -1,0 +1,25 @@
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background: var(--NavBarColor);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-left: 20px;
+}
+
+.buttonList {
+  display: flex;
+  gap: 20px;
+  padding: 5px 10px 5px;
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    padding-left: 10px;
+  }
+
+  .buttonList {
+    gap: 10px;
+  }
+}

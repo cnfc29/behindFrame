@@ -10,7 +10,6 @@ function verifyAccessToken(req, res, next) {
 
     next();
   } catch (error) {
-    console.log('Invalid access token');
     res.status(403).send('Invalid access token');
   }
 }
