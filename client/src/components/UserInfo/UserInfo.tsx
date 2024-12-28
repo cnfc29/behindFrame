@@ -16,13 +16,14 @@ export function UserInfo({ postsCount }: { postsCount: number }) {
           <div>{user.login}</div>
           <div>
             <b>{postsCount} </b>
-            {postsCount === 1
+            {/* {postsCount === 1
               ? "публикация"
               : user.postsCount === 2 ||
                 user.postsCount === 3 ||
                 user.postsCount === 4
               ? "публикации"
-              : "публикаций"}
+              : "публикаций"} А если postsCount === 42? Будет '42 публикаций. Поправь'
+              Все это вынести в отдельный helper который принимает параметр и склоняет */}
           </div>
         </div>
       )}

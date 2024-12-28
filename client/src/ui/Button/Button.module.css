@@ -1,5 +1,6 @@
 button.button {
-  padding: 10px 10px;
+  padding: 10px 10px; 
+  /* padding поставить просто 10px */
   border-radius: 15px;
   cursor: pointer;
   border: 1px solid var(--BorderColor);
@@ -9,6 +10,10 @@ button.button {
 }
 
 @media screen and (max-width: 550px) {
+  /* !!! Лучше использовать стандартные брейкпоинты, которые часто применяются во фронтенде, 
+   такие как 768px, 1024px и т.д, вместо произвольных значений. 
+   !! Кроме того, можно отказаться от media и использовать clamp()
+  */
   button.button {
     font-size: 12px;
     padding: 5px 5px;

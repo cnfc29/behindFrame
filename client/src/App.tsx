@@ -9,9 +9,12 @@ import { ROUTER } from "../router";
 import "./App.css";
 import { Profile } from "./pages/Profile";
 import { AddPost } from "./pages/AddPost";
+// Не хватает сортировки импортов в eslint
+// Нужен Prettier в проекте
 
 function App(): JSX.Element {
   const user = useAppSelector((state) => state.auth.userData);
+  // Объект с роутами вынести отсюла
   const router = createBrowserRouter([
     {
       path: ROUTER.main,

@@ -12,6 +12,7 @@ export function PrivateRouter({
   isAllowed,
   redirect = "/",
 }: PrivateRouterPropsType): JSX.Element {
+  // !!! Логику проверки isAllowed инкапсулировать здесь
   if (!isAllowed) return <Navigate to={redirect} />;
   return children || <Outlet />;
 }

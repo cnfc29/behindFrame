@@ -6,6 +6,7 @@ interface TitleBlockProps {
 }
 
 export function TitleBlock({ children, onClick }: TitleBlockProps) {
+  // Можно сократить название компонента до просто 'Title'
   return (
     <div onClick={onClick} className={styles.title}>
       {children}

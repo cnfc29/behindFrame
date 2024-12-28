@@ -16,6 +16,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
+      // !!! Для удобного использования нескольких классов из css modules почитай про библиотеку - clsx
       className={`${styles.button} ${primary && styles.primary} ${
         secondary && styles.secondary
       }`}

@@ -10,7 +10,7 @@ export function Profile() {
   const { myPosts, loading } = useAppSelector((state) => state.posts);
 
   useEffect(() => {
-    void dispatch(getMyPostsThunk());
+    void dispatch(getMyPostsThunk()); // Зачем void? Зачем dispatch в dependency array?
   }, [dispatch]);
 
   if (loading) {

@@ -11,7 +11,7 @@ export function NavBar() {
   const navigate = useNavigate();
 
   const logoutHandler = (): void => {
-    void dispatch(logoutThunk());
+    void dispatch(logoutThunk()); // Зачем void?
   };
 
   return (
