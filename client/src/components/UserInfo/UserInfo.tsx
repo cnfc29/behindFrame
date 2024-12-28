@@ -18,9 +18,7 @@ export function UserInfo({ postsCount }: { postsCount: number }) {
             <b>{postsCount} </b>
             {postsCount === 1
               ? "публикация"
-              : user.postsCount === 2 ||
-                user.postsCount === 3 ||
-                user.postsCount === 4
+              : postsCount === 2 || postsCount === 3 || postsCount === 4
               ? "публикации"
               : "публикаций"}
           </div>

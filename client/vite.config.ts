@@ -15,4 +15,8 @@ export default defineConfig({
       "@content": "/src/assets/images",
     },
   },
+  base: "/",
+  build: {
+    outDir: "../server/dist",
+  },
 });
