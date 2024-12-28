@@ -3,6 +3,7 @@ import { axiosInstance } from "../axiosInstance";
 import type { PostType, PostTypeAdd } from "../../types/postsType";
 
 class AuthAPI {
+  // Почему класс называется AuthAPI?
   constructor(private readonly api: AxiosInstance) {}
 
   getMyPosts(): Promise<PostType[]> {

@@ -3,6 +3,7 @@ import { Button } from "../../ui/Button";
 import { TitleBlock } from "../../ui/TitleBlock";
 import styles from "./AddPostForm.module.css";
 import { useAddPostForm } from "./hooks/useAddPostForm";
+
 export function AddPostForm() {
   const { register, handleSubmit, errors, onSubmit, loading } =
     useAddPostForm();

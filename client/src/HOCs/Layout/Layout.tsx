@@ -9,7 +9,7 @@ export function Layout(): JSX.Element {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    void dispatch(refreshThunk());
+    void dispatch(refreshThunk()); // Зачем void? Зачем dispatch в dependency array?
   }, [dispatch]);
 
   return (

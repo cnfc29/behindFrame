@@ -5,7 +5,7 @@ import styles from "./PostsList.module.css";
 import { ROUTER } from "../../../router";
 
 export function PostsList({ posts }: { posts: PostType[] }) {
-  if (posts.length === 0) {
+  if (posts.length === 0) { // Можно заменить на '!posts.length', будет то же самое, но короче
     return (
       <div className={styles.emptyList}>
         <div>У вас пока нет публикаций</div>

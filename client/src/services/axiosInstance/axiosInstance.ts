@@ -6,6 +6,7 @@ import type { AuthResponseType } from "../../types/authTypes";
 let store: StoreType;
 
 export const injectStore = (_store: StoreType): void => {
+  // Тут API запросы, что здесь делает redux?
   store = _store;
 };
 
@@ -19,6 +20,7 @@ axiosInstance.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${
       store?.getState().auth.accessToken
     }`;
+    // Лучше выносить длинные chaining в переменные и передавать их, такие длинные chaining сложно читать, выноси в переменные
   }
   return config;
 });
